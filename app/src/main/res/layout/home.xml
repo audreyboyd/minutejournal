@@ -9,9 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="89dp"
         android:background="#4BA5FC"
-        android:editable="false"
         android:gravity="center"
-        android:text="MinuteJournal"
+        android:text="@string/minutejournal"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textIsSelectable="false"
@@ -26,9 +25,10 @@
         android:layout_width="323dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:text="Entries"
+        android:text="@string/entries"
         android:textSize="18sp"
         android:typeface="monospace"
         android:visibility="visible"
-        app:fontFamily="@font/adamina" />
+        app:fontFamily="@font/adamina"
+        android:layout_marginStart="15dp" />
 </LinearLayout>
