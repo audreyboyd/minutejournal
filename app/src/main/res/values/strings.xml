@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">MinuteJournal</string>
+<<<<<<< HEAD
     <string name="minutejournal">MinuteJournal</string>
     <string name="entries">Entries</string>
     <string name="_4">4</string>
@@ -15,4 +16,6 @@
     <string name="_7">7</string>
     <string name="_3">3</string>
     <string name="done">Done</string>
+=======
+>>>>>>> 40a76f23c1e247bad2c662d97c4176d48599e3db
 </resources>
