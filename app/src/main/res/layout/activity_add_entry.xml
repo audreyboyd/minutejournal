@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/doneBtn"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="176dp"
+            android:layout_marginLeft="176dp"
+            android:layout_marginTop="96dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text_black"
+            android:textIsSelectable="false"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cancelBtn"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="292dp"
+            android:layout_marginLeft="292dp"
+            android:layout_marginTop="96dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@android:string/cancel"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text_black"
+            android:textIsSelectable="false"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtHeader"
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/minutejournal"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text_black"
+            android:textIsSelectable="false"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtHeader5"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="128dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textIsSelectable="false"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="408dp"
+            android:layout_height="574dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="156dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="What's on your mind today..."
+            android:inputType="textMultiLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
