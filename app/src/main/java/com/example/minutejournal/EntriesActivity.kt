@@ -5,17 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 
-class MainActivity : AppCompatActivity() {
-
+class EntriesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.home)
+        setContentView(R.layout.activity_entries)
 
-        val button = findViewById<ImageView>(R.id.numberOK)
+        val button = findViewById<ImageView>(R.id.addEntry)
         button.setOnClickListener {
             // Handler code here.
-            val intent = Intent(this, EntriesActivity::class.java)
+            val intent = Intent(this, AddEntryActivity::class.java)
             startActivity(intent);
         }
     }

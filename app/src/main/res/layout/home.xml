@@ -1,6 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <TextView
+        android:id="@+id/txtHeader2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="@string/minutejournal"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text_black"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:text="@string/passcodeHint"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/text_black"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="312dp"
+        android:layout_marginTop="25dp"
+        android:padding="48dp">
+
+        <TextView
+            android:id="@+id/number1"
+            style="@style/NumberInPasscode"
+            android:layout_alignParentLeft="true"
+            android:background="@color/colorAccent"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/number2"
+            style="@style/NumberInPasscode"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorAccent"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/number3"
+            style="@style/NumberInPasscode"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorAccent"
+            android:text="3" />
+
+        <TextView
+            android:id="@+id/number4"
+            style="@style/NumberInPasscode"
+            android:layout_below="@id/number1"
+            android:layout_alignParentLeft="true"
+            android:background="@color/colorAccent"
+            android:text="4" />
+
+        <TextView
+            android:id="@+id/number5"
+            style="@style/NumberInPasscode"
+            android:layout_below="@id/number1"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorAccent"
+            android:text="5" />
+
+        <TextView
+            android:id="@+id/number6"
+            style="@style/NumberInPasscode"
+            android:layout_below="@id/number1"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorAccent"
+            android:text="6" />
+
+        <TextView
+            android:id="@+id/number7"
+            style="@style/NumberInPasscode"
+            android:layout_below="@id/number4"
+            android:layout_alignParentLeft="true"
+            android:background="@color/colorAccent"
+            android:text="7" />
+
+        <TextView
+            android:id="@+id/number8"
+            style="@style/NumberInPasscode"
+            android:layout_below="@id/number4"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorAccent"
+            android:text="8" />
+
+        <TextView
+            android:id="@+id/number9"
+            style="@style/NumberInPasscode"
+            android:layout_below="@id/number4"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorAccent"
+            android:text="9" />
+
+        <ImageView
+            android:id="@+id/numberBackspace"
+            style="@style/NumberInPasscode"
+            android:layout_below="@id/number7"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/backspace"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/number0"
+            style="@style/NumberInPasscode"
+            android:layout_below="@id/number7"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorAccent"
+            android:text="0" />
+
+        <ImageView
+            android:id="@+id/numberOK"
+            style="@style/NumberInPasscode"
+            android:layout_below="@id/number7"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/ok"
+            android:scaleType="centerInside" />
+
+    </RelativeLayout>
+
+</LinearLayout>
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
