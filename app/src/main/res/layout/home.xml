@@ -17,7 +17,7 @@
             android:textSize="18sp"
             android:typeface="monospace"
             android:visibility="visible"
-            app:fontFamily="@font/adamina"
+            app:fontFamily="adamina"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtHeader" />
 
@@ -35,7 +35,7 @@
             android:textStyle="bold"
             android:typeface="monospace"
             android:visibility="visible"
-            app:fontFamily="@font/adamina"
+            app:fontFamily="adamina"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="-46dp" />
 
