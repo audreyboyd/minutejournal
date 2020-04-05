@@ -1,4 +1,4 @@
-package com.example.minutejournal.ui.main
+package com.example.minutejournal.ui.main.DTO
 
 data class EntriesDTO(var title: String, var text: String, var date: String) {
 //TODO: Add toString Override
