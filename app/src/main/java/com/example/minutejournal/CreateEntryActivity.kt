@@ -35,7 +35,7 @@ class CreateEntryActivity : AppCompatActivity() {
             builder.setMessage("Are you sure you want to cancel this entry? All progress will be lost!")
             builder.setPositiveButton("Yes"){dialog, which ->
                 Toast.makeText(applicationContext, "Entry cancelled", Toast.LENGTH_SHORT).show()
-                finish();
+                finish()
             }
             builder.setNegativeButton("No"){dialog, which ->}
             val dialog: AlertDialog = builder.create()
@@ -44,9 +44,19 @@ class CreateEntryActivity : AppCompatActivity() {
 
         val btnSaveEntry : ImageButton = findViewById(R.id.btnSave)
         btnSaveEntry.setOnClickListener{
-            entry = EntriesDTO(txtTitle.text.toString(), txtEntry.text.toString(), LocalDate.now().toString())
-            saveEntry(entry)
-            //TODO:Close entry screen
+            if(txtTitle.text == "" || txtEntry.text == "") {
+                Toast.makeText(applicationContext, "Entry Incomplete", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                entry = EntriesDTO(
+                    txtTitle.text.toString(),
+                    txtEntry.text.toString(),
+                    LocalDate.now().toString()
+                )
+                saveEntry(entry)
+                Toast.makeText(applicationContext, "Entry Saved", Toast.LENGTH_SHORT).show()
+                finish()
+            }
         }
     }
     fun saveEntry(entriesDTO: EntriesDTO){
