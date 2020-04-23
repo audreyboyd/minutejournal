@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "145274186656",
+    "firebase_url": "https://minutejournal-62523.firebaseio.com",
+    "project_id": "minutejournal-62523",
+    "storage_bucket": "minutejournal-62523.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145274186656:android:d07e57b1043bbef90952c5",
+        "android_client_info": {
+          "package_name": "com.example.minutejournal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145274186656-sh925jq24pfi1qjjf77udfkgvu50g8pc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM_sm1jgasIahot-Wrd_I3Jbf51bBwDDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145274186656-sh925jq24pfi1qjjf77udfkgvu50g8pc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
