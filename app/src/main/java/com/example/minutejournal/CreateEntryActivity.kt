@@ -3,21 +3,29 @@ package com.example.minutejournal
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.minutejournal.ui.main.EntriesDTO
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
 import kotlinx.android.synthetic.main.activity_create_entry.*
 import java.time.LocalDate
 import java.util.*
 
 class CreateEntryActivity : AppCompatActivity() {
+    var firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+    lateinit var entry: EntriesDTO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_entry)
 
-        lateinit var entry: EntriesDTO
+
+
+        firestore.firestoreSettings = FirebaseFirestoreSettings.Builder().build()
+
 
         //When cancel button is clicked, prompt for confirmation
         val btnCancelEntry : ImageButton = findViewById(R.id.btnCancel)
@@ -37,7 +45,19 @@ class CreateEntryActivity : AppCompatActivity() {
         val btnSaveEntry : ImageButton = findViewById(R.id.btnSave)
         btnSaveEntry.setOnClickListener{
             entry = EntriesDTO(txtTitle.text.toString(), txtEntry.text.toString(), LocalDate.now().toString())
-
+            saveEntry(entry)
+            //TODO:Close entry screen
         }
+    }
+    fun saveEntry(entriesDTO: EntriesDTO){
+        firestore.collection("Entries")
+            .document()
+            .set(entry)
+            .addOnSuccessListener {
+                Log.d("Firebase", "document saved")
+            }
+            .addOnFailureListener{
+                Log.d("Firebase", "Save Failed")
+            }
     }
 }
