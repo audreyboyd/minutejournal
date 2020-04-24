@@ -8,6 +8,9 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.minutejournal.ui.main.EntriesDTO
+import com.firebase.ui.auth.AuthUI
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
 import kotlinx.android.synthetic.main.activity_create_entry.*
@@ -15,6 +18,8 @@ import java.time.LocalDate
 import java.util.*
 
 class CreateEntryActivity : AppCompatActivity() {
+    private val AUTH_REQUEST_CODE = 3453
+    var user : FirebaseUser? = null
     var firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     lateinit var entry: EntriesDTO
 
@@ -44,7 +49,7 @@ class CreateEntryActivity : AppCompatActivity() {
 
         val btnSaveEntry : ImageButton = findViewById(R.id.btnSave)
         btnSaveEntry.setOnClickListener{
-            if(txtTitle.text == "" || txtEntry.text == "") {
+            if(txtTitle.text.isBlank() || txtEntry.text.isBlank()) {
                 Toast.makeText(applicationContext, "Entry Incomplete", Toast.LENGTH_SHORT).show()
             }
             else {
@@ -53,9 +58,16 @@ class CreateEntryActivity : AppCompatActivity() {
                     txtEntry.text.toString(),
                     LocalDate.now().toString()
                 )
-                saveEntry(entry)
-                Toast.makeText(applicationContext, "Entry Saved", Toast.LENGTH_SHORT).show()
-                finish()
+                //TODO: Fix this auth check. Doesn't work
+                if(FirebaseAuth.getInstance().getCurrentUser() == null)
+                {
+                    logon()
+                }
+                else {
+                    saveEntry(entry)
+                    Toast.makeText(applicationContext, "Entry Saved", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
             }
         }
     }
@@ -69,5 +81,21 @@ class CreateEntryActivity : AppCompatActivity() {
             .addOnFailureListener{
                 Log.d("Firebase", "Save Failed")
             }
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK){
+            if (requestCode == AUTH_REQUEST_CODE) {
+                user = FirebaseAuth.getInstance().currentUser
+            }
+        }
+    }
+    fun logon() {
+        var providers = arrayListOf(
+            AuthUI.IdpConfig.EmailBuilder().build()
+        )
+        startActivityForResult(
+            AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build(), AUTH_REQUEST_CODE
+        )
     }
 }

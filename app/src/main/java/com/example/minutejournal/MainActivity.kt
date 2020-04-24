@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
     private val AUTH_REQUEST_CODE = 3453
-    private var user : FirebaseUser? = null
+    var user : FirebaseUser? = null
     var entries: ArrayList<EntriesDTO> = ArrayList<EntriesDTO>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun logon() {
+    fun logon() {
         var providers = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build()
         )
@@ -51,7 +51,5 @@ class MainActivity : AppCompatActivity() {
             AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build(), AUTH_REQUEST_CODE
         )
     }
-    fun addEntry(entry:EntriesDTO){
-        entries.add(entry)
-    }
+
 }
