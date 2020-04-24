@@ -61,7 +61,7 @@ class CreateEntryActivity : AppCompatActivity() {
                 //TODO: Fix this auth check. Doesn't work
                 if(FirebaseAuth.getInstance().currentUser == null)
                 {
-                    logon()
+                   // logon()
                 }
                 else {
                     saveEntry(entry)
@@ -90,12 +90,12 @@ class CreateEntryActivity : AppCompatActivity() {
             }
         }
     }
-    fun logon() {
+    /*fun logon() {
         var providers = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build()
         )
         startActivityForResult(
             AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build(), AUTH_REQUEST_CODE
         )
-    }
+    }*/
 }

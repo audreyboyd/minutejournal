@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CreateEntryActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.main.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

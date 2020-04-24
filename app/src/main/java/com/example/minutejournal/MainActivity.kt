@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import com.example.minutejournal.ui.main.EntriesDTO
 import com.firebase.ui.auth.AuthUI
@@ -26,14 +25,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CreateEntryActivity:: class.java)
             startActivity(intent)
         }
-
-        val btnSignIn : ImageButton = findViewById(R.id.btnLogon)
-        btnSignIn.setOnClickListener{
-            this.logon()
-        }
     }
-
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -43,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    fun logon() {
+    /*fun logon() {
         var providers = arrayListOf(
             AuthUI.IdpConfig.EmailBuilder().build()
         )
@@ -51,6 +43,6 @@ class MainActivity : AppCompatActivity() {
             AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers)
                 .build(), AUTH_REQUEST_CODE
         )
-    }
+    }*/
 
 }
