@@ -53,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
 
         val loginBttn : Button = findViewById(R.id.bttnLogin)
         val regBttn : Button = findViewById(R.id.bttnRegister)
-
+        //todo register button does not take user to the RegisterActivity
         loginBttn.setOnClickListener{
             login()
         }
