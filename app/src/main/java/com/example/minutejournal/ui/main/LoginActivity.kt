@@ -11,27 +11,17 @@ import com.example.minutejournal.R
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import android.content.Intent
+import kotlinx.android.synthetic.main.activity_login.*
 
 
 class LoginActivity : AppCompatActivity() {
 
     val mAuth = FirebaseAuth.getInstance()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-
-        val loginBttn = findViewById<View>(R.id.bttnLogin) as Button
-        val regBttn = findViewById<View>(R.id.bttnRegister) as Button
-
-        loginBttn.setOnClickListener(View.OnClickListener {
-            view -> login()
-        })
-        regBttn.setOnClickListener(View.OnClickListener {
-            view -> register()
-        })
+    private fun register () {
+        var clickRIntent = Intent(this, RegisterActivity :: class.java)
+        startActivity(clickRIntent)
     }
-
     private fun login () {
         val emailTxt = findViewById<View>(R.id.etEmail) as EditText
         val passwordTxt = findViewById<View>(R.id.etPassword) as EditText
@@ -57,9 +47,18 @@ class LoginActivity : AppCompatActivity() {
 
         }
     }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login)
 
-    private fun register () {
-        var clickRIntent = Intent(this, RegisterActivity :: class.java)
-        startActivity(clickRIntent)
+        val loginBttn : Button = findViewById(R.id.bttnLogin)
+        val regBttn : Button = findViewById(R.id.bttnRegister)
+
+        loginBttn.setOnClickListener{
+            login()
+        }
+        regBttn.setOnClickListener{
+            register()
+        }
     }
 }
