@@ -15,4 +15,8 @@
     <string name="_7">7</string>
     <string name="_3">3</string>
     <string name="done">Done</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
 </resources>

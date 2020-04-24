@@ -56,10 +56,10 @@ class CreateEntryActivity : AppCompatActivity() {
                 entry = EntriesDTO(
                     txtTitle.text.toString(),
                     txtEntry.text.toString(),
-                    LocalDate.now().toString()
+                    LocalDate.now()
                 )
                 //TODO: Fix this auth check. Doesn't work
-                if(FirebaseAuth.getInstance().getCurrentUser() == null)
+                if(FirebaseAuth.getInstance().currentUser == null)
                 {
                     logon()
                 }

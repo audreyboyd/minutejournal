@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "145274186656-r1l6smliuvbg48auf1eilgcti9ofdkiv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.minutejournal",
+            "certificate_hash": "441b73b96eb7eef481c5c84bb99d260651de7f01"
+          }
+        },
+        {
           "client_id": "145274186656-sh925jq24pfi1qjjf77udfkgvu50g8pc.apps.googleusercontent.com",
           "client_type": 3
         }
